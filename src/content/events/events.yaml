@@ -1,0 +1,12 @@
+- id: tenida-solemne-conmemorativa
+  order: 1
+  day: "13"
+  month: "Oct"
+  title: "Tenida Solemne Conmemorativa"
+  info: "Club Libertad, Viña del Mar · 21:00 horas"
+- id: agape-fraternal
+  order: 2
+  day: "13"
+  month: "Oct"
+  title: "Ágape Fraternal"
+  info: "Club Libertad, Viña del Mar · 22:30 horas"

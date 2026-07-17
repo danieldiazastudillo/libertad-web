@@ -1,0 +1,134 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Seal from "../../components/brand/Seal.astro";
+
+const entry = await getEntry("site", "invitacion");
+if (!entry) throw new Error("Missing site.yaml 'invitacion' entry");
+const invitacion = entry.data;
+---
+
+<Layout title="Invitación · 110° Aniversario · Resp∴ Log∴ Abnegación N°48">
+  <div class="invitacion-sheet">
+    <div class="invitacion-eyebrow">{invitacion.eyebrow}</div>
+    <div class="invitacion-years">
+      <span>{invitacion.yearStart}</span>
+      <Seal size={96} />
+      <span>{invitacion.yearEnd}</span>
+    </div>
+    <h1>{invitacion.title}</h1>
+    <div class="invitacion-num">{invitacion.ordinal}</div>
+    <div class="invitacion-eyebrow invitacion-tagline">{invitacion.tagline}</div>
+    <p class="invitacion-body">{invitacion.body}</p>
+    <div class="invitacion-divider"></div>
+    <div class="invitacion-logistics">{invitacion.logistics}</div>
+    <footer>{invitacion.footer}</footer>
+  </div>
+</Layout>
+
+<style>
+  :global(html, body) {
+    background: var(--ivory-200);
+  }
+
+  .invitacion-sheet {
+    box-sizing: border-box;
+    max-width: 640px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: var(--space-9) var(--space-6);
+    background: var(--surface-canvas-light);
+    color: var(--text-on-light-primary);
+    font-family: var(--font-serif);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .invitacion-eyebrow {
+    font-family: var(--font-display);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--text-accent-gold-on-light);
+  }
+
+  .invitacion-years {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    margin: var(--space-5) 0;
+  }
+  .invitacion-years span {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    letter-spacing: var(--tracking-wide);
+    color: var(--navy-500);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--text-2xl);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    margin: var(--space-4) 0 0;
+    color: var(--text-on-light-primary);
+  }
+
+  .invitacion-num {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--text-accent-gold-on-light);
+    line-height: 1;
+    margin-top: var(--space-2);
+  }
+
+  .invitacion-tagline {
+    font-size: var(--text-lg);
+    margin-top: var(--space-2);
+  }
+
+  .invitacion-body {
+    font: var(--font-body-lg);
+    color: var(--text-on-light-secondary);
+    max-width: 480px;
+    margin: var(--space-6) 0 0;
+  }
+
+  .invitacion-divider {
+    width: 60%;
+    height: 1px;
+    margin: var(--space-6) 0;
+    background: linear-gradient(90deg, transparent, var(--gold-700) 50%, transparent);
+  }
+
+  .invitacion-logistics {
+    font-family: var(--font-display);
+    font-size: var(--text-sm);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--text-on-light-secondary);
+  }
+
+  footer {
+    margin-top: var(--space-6);
+    font: var(--font-caption);
+    color: var(--text-on-light-muted);
+  }
+
+  @media print {
+    @page {
+      size: letter;
+      margin: 0.75in;
+    }
+    :global(html, body) {
+      background: white;
+    }
+    .invitacion-sheet {
+      min-height: 0;
+      box-shadow: none;
+    }
+  }
+</style>

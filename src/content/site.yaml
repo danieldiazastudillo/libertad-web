@@ -1,0 +1,59 @@
+hero:
+  eyebrow: "Resp∴ Log∴ Abnegación N°48 · Viña del Mar, Chile"
+  yearStart: "1916"
+  yearEnd: "2026"
+  title: "Centésimo Décimo Aniversario"
+  ordinal: "110°"
+  tagline: "110° años. Construyendo en silencio"
+  intro: "El Venerable Maestro tiene el agrado de invitar a usted a la Solemne Tenida Conmemorativa con motivo de la celebración del centésimo décimo aniversario de fundación de esta Respetable Logia."
+  dateBadge: "Martes 13 de Octubre, 2026"
+  timeBadge: "21:00 Horas"
+  modeBadge: "Vía Zoom"
+
+agenda:
+  eyebrow: "Orden del Día"
+  items:
+    - "Apertura de los trabajos"
+    - "Palabras del V∴M∴ Eduardo Morales Espinosa"
+    - "Alocución del Gran Maestro V∴H∴ Sebastián Jans Peréz"
+    - "Reseña histórica 1916–2026"
+    - "Clausura de la Cámara Logial"
+
+lodges:
+  eyebrow: "Logias Copartícipes"
+  text: "R∴L∴ Abnegación N°48 · R∴L∴ Aurora N°6 · R∴L∴ Humberto Molina Luco N°161"
+
+rsvp:
+  heading: "Confirmar Asistencia"
+  nameLabel: "Nombre completo"
+  namePlaceholder: "Nombre y apellido"
+  lodgeLabel: "Logia / Oriente"
+  lodgePlaceholder: "R∴L∴ y N°, si corresponde"
+  emailLabel: "Correo electrónico"
+  emailPlaceholder: "correo@ejemplo.cl"
+  submitLabel: "Confirmar Asistencia"
+  successMessage: "Su asistencia ha sido registrada. Gracias por acompañarnos."
+
+footer:
+  text: "Confirmar asistencia también a sec_rl48@granlogia.cl"
+
+nav:
+  brand: "Abnegación N°48"
+  links:
+    - label: "Aniversario"
+      href: "#aniversario"
+    - label: "Historia"
+      href: "#historia"
+    - label: "RSVP"
+      href: "#rsvp"
+
+invitacion:
+  eyebrow: "Resp∴ Log∴ Abnegación N°48 · Viña del Mar, Chile"
+  yearStart: "1916"
+  yearEnd: "2026"
+  title: "Centésimo Décimo Aniversario"
+  ordinal: "110°"
+  tagline: "110° años. Construyendo en silencio"
+  body: "El Venerable Maestro tiene el agrado de invitar a usted a la Solemne Tenida Conmemorativa con motivo de la celebración del centésimo décimo aniversario de fundación de esta Respetable Logia."
+  logistics: "Martes 13 de Octubre, 2026 · 21:00 Horas · Vía Zoom"
+  footer: "Confirmar asistencia a sec_rl48@granlogia.cl"
