@@ -12,9 +12,11 @@ Sitio conmemorativo del centésimo décimo aniversario de la Respetable Logia Ab
 - Imágenes optimizadas automáticamente en el build (`astro:assets`, formato WebP)
 - Publicación automática en GitHub Pages vía GitHub Actions
 
-## ¿Cómo edito los textos o el calendario de eventos?
+## Documentación
 
-Ver **[CONTENIDO.md](./CONTENIDO.md)** — una guía en español pensada para editar el sitio sin tocar código.
+- **[CONTENIDO.md](./CONTENIDO.md)** — cómo editar los textos y el calendario de eventos sin tocar código.
+- **[docs/sistema-diseno.md](./docs/sistema-diseno.md)** — paleta, tipografía, tokens y componentes.
+- **[docs/flujo-desarrollo.md](./docs/flujo-desarrollo.md)** — desarrollo local, build, cómo agregar secciones nuevas, despliegue.
 
 ## Estructura
 
