@@ -1,0 +1,72 @@
+---
+export interface Props {
+  /** Optional centered caption, e.g. "Orden del Día". Omit for a plain hairline. */
+  label?: string;
+  tone?: "dark" | "light";
+}
+
+const { label, tone = "dark" } = Astro.props;
+---
+
+{!label ? (
+  <div class:list={["divider-plain", tone]}></div>
+) : (
+  <div class:list={["divider-labeled", tone]}>
+    <div class="divider-line"></div>
+    <span class="divider-label">
+      {label}
+    </span>
+    <div class="divider-line"></div>
+  </div>
+)}
+
+<style>
+  .divider-plain {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-color) 50%, transparent);
+  }
+
+  .divider-plain.dark {
+    --line-color: var(--gold-600);
+  }
+
+  .divider-plain.light {
+    --line-color: var(--gold-700);
+  }
+
+  .divider-labeled {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    opacity: 0.5;
+  }
+
+  .divider-labeled.dark .divider-line {
+    background: var(--gold-600);
+  }
+
+  .divider-labeled.light .divider-line {
+    background: var(--gold-700);
+  }
+
+  .divider-label {
+    font-family: var(--font-display);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .divider-labeled.dark .divider-label {
+    color: var(--text-accent-gold);
+  }
+
+  .divider-labeled.light .divider-label {
+    color: var(--text-accent-gold-on-light);
+  }
+</style>

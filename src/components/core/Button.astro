@@ -1,0 +1,90 @@
+---
+export interface Props {
+  /** Visual treatment. Primary = solid navy w/ gold hairline (main CTA, one per view). Secondary = outlined. Ghost = text-only gold link. */
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "sm" | "md" | "lg";
+  disabled?: boolean;
+  type?: "button" | "submit" | "reset";
+}
+
+const { variant = "primary", size = "md", disabled = false, type = "button" } = Astro.props;
+---
+
+<button class:list={["button", variant, size]} type={type} disabled={disabled}>
+  <slot />
+</button>
+
+<style>
+  .button {
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    opacity: 1;
+    transition: background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  /* Size variants */
+  .button.sm {
+    font-size: var(--text-2xs);
+    padding: 8px 18px;
+  }
+
+  .button.md {
+    font-size: var(--text-xs);
+    padding: 12px 28px;
+  }
+
+  .button.lg {
+    font-size: var(--text-sm);
+    padding: 16px 40px;
+  }
+
+  /* Primary variant */
+  .button.primary {
+    background: var(--action-primary-bg);
+    color: var(--action-primary-text);
+    border: 1px solid var(--action-primary-border);
+  }
+
+  .button.primary:hover:not(:disabled),
+  .button.primary:focus-visible:not(:disabled) {
+    background: var(--action-primary-bg-hover);
+  }
+
+  /* Secondary variant */
+  .button.secondary {
+    background: var(--action-secondary-bg);
+    color: var(--action-secondary-text);
+    border: 1px solid var(--action-secondary-border);
+  }
+
+  .button.secondary:hover:not(:disabled),
+  .button.secondary:focus-visible:not(:disabled) {
+    background: var(--action-secondary-bg-hover);
+    border-color: var(--border-gold);
+  }
+
+  /* Ghost variant */
+  .button.ghost {
+    background: transparent;
+    color: var(--text-accent-gold);
+    border: 1px solid transparent;
+  }
+
+  .button.ghost:hover:not(:disabled),
+  .button.ghost:focus-visible:not(:disabled) {
+    color: var(--accent-hover);
+  }
+</style>

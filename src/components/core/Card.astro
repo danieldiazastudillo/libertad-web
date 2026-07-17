@@ -1,0 +1,35 @@
+---
+export interface Props {
+  tone?: "dark" | "light";
+  padded?: boolean;
+}
+
+const { tone = "dark", padded = true } = Astro.props;
+---
+
+<div class:list={["card", tone, { padded }]}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+  }
+
+  .card.dark {
+    background: var(--surface-card-dark);
+    border: 1px solid var(--border-on-dark);
+    color: var(--text-on-dark-primary);
+  }
+
+  .card.light {
+    background: var(--surface-card-light);
+    border: 1px solid var(--border-on-light);
+    color: var(--text-on-light-primary);
+  }
+
+  .card.padded {
+    padding: var(--space-6);
+  }
+</style>

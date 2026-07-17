@@ -1,0 +1,29 @@
+---
+export interface Props {
+  tone?: "dark" | "light";
+  align?: "left" | "center" | "right";
+}
+
+const { tone = "dark", align = "left" } = Astro.props;
+---
+
+<div class:list={["eyebrow", tone]} style={`text-align: ${align};`}>
+  <slot />
+</div>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: var(--text-2xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+  }
+
+  .eyebrow.dark {
+    color: var(--text-accent-gold);
+  }
+
+  .eyebrow.light {
+    color: var(--text-accent-gold-on-light);
+  }
+</style>

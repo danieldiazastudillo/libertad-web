@@ -1,0 +1,43 @@
+---
+export interface Props {
+  /** gold = on dark ceremonial fields; navy = on light/print surfaces; outline = subdued on dark. */
+  tone?: "gold" | "navy" | "outline";
+}
+
+const { tone = "gold" } = Astro.props;
+---
+
+<span class:list={["badge", tone]}>
+  <slot />
+</span>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: var(--text-3xs);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+  }
+
+  .badge.gold {
+    border: 1px solid var(--border-gold);
+    color: var(--text-accent-gold);
+    background: transparent;
+  }
+
+  .badge.navy {
+    border: 1px solid var(--border-on-light);
+    color: var(--navy-700);
+    background: var(--navy-50);
+  }
+
+  .badge.outline {
+    border: 1px solid var(--border-on-dark-strong);
+    color: var(--text-on-dark-secondary);
+    background: transparent;
+  }
+</style>
