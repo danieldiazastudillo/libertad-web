@@ -1,0 +1,25 @@
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  background: var(--surface-canvas-dark);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}

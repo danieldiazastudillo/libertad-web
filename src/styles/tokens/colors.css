@@ -1,0 +1,98 @@
+/* ==========================================================================
+   COLOR TOKENS — Resp∴ Log∴ Abnegación N°48
+   Palette derived from the lodge seal and the 2020 anniversary invitation:
+   deep navy fields, a muted antique-gold chain/rule, and parchment/ivory
+   for print and light surfaces. Kept deliberately narrow and somber —
+   this is a ceremonial, not a decorative, palette.
+   ========================================================================== */
+
+:root {
+  /* ---- Base: Navy (primary field color) ---- */
+  --navy-950: #0c1122;
+  --navy-900: #10152b;
+  --navy-800: #161d3a;
+  --navy-700: #202a4d;
+  --navy-600: #2c3866;
+  --navy-500: #3c4a80;
+  --navy-400: #5b6aa0;
+  --navy-300: #8892bb;
+  --navy-200: #b9c0da;
+  --navy-100: #dfe2ee;
+  --navy-50:  #f2f3f8;
+
+  /* ---- Base: Gold (ceremonial accent — use sparingly) ---- */
+  --gold-900: #6e561e;
+  --gold-800: #8a6c26;
+  --gold-700: #a6822f;
+  --gold-600: #bf9a42;
+  --gold-500: #c9a952;
+  --gold-400: #d6bc72;
+  --gold-300: #e2d095;
+  --gold-200: #ecdfb8;
+  --gold-100: #f5edd8;
+
+  /* ---- Base: Ivory / Parchment (print + light surfaces) ---- */
+  --ivory-100: #fbf8f1;
+  --ivory-200: #f5efe1;
+  --ivory-300: #ede4cd;
+  --ivory-400: #ded0ab;
+
+  /* ---- Base: Ink (print text, never pure black) ---- */
+  --ink-900: #17140f;
+  --ink-700: #332d22;
+  --ink-500: #5a5142;
+
+  /* ---- Neutral gray (UI chrome, never used for ceremonial copy) ---- */
+  --gray-900: #1c1f26;
+  --gray-700: #4a4f5c;
+  --gray-500: #767c8a;
+  --gray-300: #c3c7d1;
+  --gray-100: #eef0f3;
+
+  /* ---- Semantic: surfaces ---- */
+  --surface-canvas-dark: var(--navy-950);
+  --surface-canvas-light: var(--ivory-100);
+  --surface-panel-dark: var(--navy-800);
+  --surface-panel-light: #ffffff;
+  --surface-card-dark: var(--navy-700);
+  --surface-card-light: var(--ivory-200);
+  --surface-overlay: rgba(12, 17, 34, 0.72);
+
+  /* ---- Semantic: text ---- */
+  --text-on-dark-primary: var(--ivory-100);
+  --text-on-dark-secondary: var(--navy-200);
+  --text-on-dark-muted: var(--navy-300);
+  --text-on-light-primary: var(--ink-900);
+  --text-on-light-secondary: var(--ink-700);
+  --text-on-light-muted: var(--ink-500);
+  --text-accent-gold: var(--gold-500);
+  --text-accent-gold-on-light: var(--gold-800);
+
+  /* ---- Semantic: borders + dividers ---- */
+  --border-on-dark: rgba(217, 224, 245, 0.18);
+  --border-on-dark-strong: rgba(217, 224, 245, 0.32);
+  --border-on-light: rgba(23, 20, 15, 0.14);
+  --border-gold: rgba(201, 169, 82, 0.55);
+  --divider-gold: linear-gradient(90deg, transparent, var(--gold-600) 50%, transparent);
+
+  /* ---- Semantic: interactive (accent = gold, restrained) ---- */
+  --accent-default: var(--gold-500);
+  --accent-hover: var(--gold-400);
+  --accent-active: var(--gold-700);
+  --accent-on-accent-text: var(--navy-950);
+
+  --action-primary-bg: var(--navy-800);
+  --action-primary-bg-hover: var(--navy-700);
+  --action-primary-bg-active: var(--navy-900);
+  --action-primary-border: var(--border-gold);
+  --action-primary-text: var(--ivory-100);
+
+  --action-secondary-bg: transparent;
+  --action-secondary-border: var(--border-on-dark-strong);
+  --action-secondary-text: var(--ivory-100);
+  --action-secondary-bg-hover: rgba(217, 224, 245, 0.06);
+
+  /* ---- Semantic: status (used sparingly — RSVP/confirmation only) ---- */
+  --status-confirm: #4f7a5a;
+  --status-caution: var(--gold-700);
+}
